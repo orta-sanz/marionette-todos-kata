@@ -32,7 +32,8 @@ const webpackCommon = {
     ]
   },
   stylus: {
-    use: [nib()]
+    use: [nib()],
+    includeCss: true
   },
   output: {
     filename: 'app.js',
@@ -47,7 +48,8 @@ const webpackCommon = {
     }]),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      _: 'underscore'
+      _: 'underscore',
+      jQuery: 'jquery'
     })
   ],
   resolve: {
@@ -56,7 +58,7 @@ const webpackCommon = {
   resolveLoader: {
     root: path.join(__dirname, './node_modules')
   }
-};
+}
 
 switch (process.env.npm_lifecycle_event) {
   case 'start':
@@ -66,11 +68,11 @@ switch (process.env.npm_lifecycle_event) {
       devServer: {
         inline: true
       }
-    });
-    break;
+    })
+    break
   default:
     module.exports = merge(webpackCommon, {
       devtool: 'source-map'
-    });
-    break;
+    })
+    break
 }
