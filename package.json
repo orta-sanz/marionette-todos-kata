@@ -1,0 +1,41 @@
+{
+  "name": "todo-marionette-webpack",
+  "description": "Todos Katada",
+  "author": "Alejandro Orta",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "prebuild": "rm -rf ./public/",
+    "build": "npm run lint && webpack -p",
+    "lint": "eslint app",
+    "test": "echo test"
+  },
+  "dependencies": {
+    "backbone": "~1.3.3",
+    "backbone.marionette": "~3.0.0",
+    "jquery": "~1.12.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^2.11.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.5.0",
+    "nib": "^1.1.2",
+    "style-loader": "^0.18.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^1.12.15",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.15.0"
+  }
+}
